@@ -1,0 +1,5 @@
+node_modules
+build
+.env
+unbox.sh
+box-img-*.png
