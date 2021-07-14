@@ -1,5 +1,7 @@
 # Ivan On Tech - Chainlink 101 Lottery
 
+> Note! This has recently been updated for the new Chainlink VRF API. `userProvidedSeed` is no longer needed. 
+
 <br/>
 <p align="center">
 <a href="https://academy.ivanontech.com/" target="_blank">
