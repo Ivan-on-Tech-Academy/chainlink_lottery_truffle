@@ -1,11 +1,11 @@
 const Lottery = artifacts.require('Lottery')
-const {LinkToken} = require('@chainlink/contracts/truffle/v0.4/LinkToken');
+const { LinkToken } = require('@chainlink/contracts/truffle/v0.4/LinkToken')
 
 module.exports = async (deployer, network, [defaultAccount]) => {
-  if(!network.startsWith('kovan')){
+  if (!network.startsWith('kovan')) {
     console.log('Currently only works with Kovan!')
     LinkToken.setProvider(deployer.provider)
-  }else{
+  } else {
     const KOVAN_KEYHASH = '0x6c3699283bda56ad74f6b855546325b68d482e983852a7a82979cc4807b641f4'
     const KOVAN_VRF_COORDINATOR = '0xdD3782915140c8f3b190B5D67eAc6dc5760C46E9'
     const ETH_USD_PRICE_FEED = '0x9326BFA02ADD2366b30bacB125260Af641031331'

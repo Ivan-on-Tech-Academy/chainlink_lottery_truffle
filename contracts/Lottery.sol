@@ -64,16 +64,16 @@ contract Lottery is VRFConsumerBase, Ownable{
         randomness = 0;
     }
 
-    function endLottery(uint256 userProvidedSeed) public{
+    function endLottery() public{
         require(lotteryState == LOTTERY_STATE.OPEN, "Can't end lottery yet");
         lotteryState = LOTTERY_STATE.CALCULATING_WINNER;
-        pickWinner(userProvidedSeed);
+        pickWinner();
         
     }
 
-    function pickWinner(uint256 userProvidedSeed) private returns(bytes32){
+    function pickWinner() private returns(bytes32){
         require(lotteryState == LOTTERY_STATE.CALCULATING_WINNER, "Needs to be calculating the winner");
-        bytes32 requestId = requestRandomness(KeyHash, fee, userProvidedSeed);
+        bytes32 requestId = requestRandomness(KeyHash, fee);
         emit RequestedRandomness(requestId);
     }
 
